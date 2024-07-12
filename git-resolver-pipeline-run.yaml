@@ -1,0 +1,18 @@
+kind: PipelineRun
+apiVersion: tekton.dev/v1beta1
+metadata:
+  metadata:
+  name: git-resolv-test
+spec:
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: https://github.com/wakelesstuna/tekton-pipeline-resolver.git
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: resolver-pipeline.yaml
+  params:
+    - name: username
+      value: oscar
